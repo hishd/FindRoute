@@ -8,25 +8,31 @@
 import Foundation
 
 class RouteViewViewModel: ObservableObject {
-    @Published var fromLocation: String = "" {
+    @Published var sourceLocationQuery: String = "" {
         didSet {
+            guard selectedSourceLocation?.name != sourceLocationQuery else {
+                return
+            }
             isSearchingDestinationLocations = false
-            if fromLocation.isEmpty {
+            if sourceLocationQuery.isEmpty {
                 isSearchingSourceLocations = false
             } else {
                 isSearchingSourceLocations = true
-                fetchSourceLocations(contains: fromLocation)
+                fetchSourceLocations(contains: sourceLocationQuery)
             }
         }
     }
-    @Published var endLocation: String = "" {
+    @Published var destinationLocationQuery: String = "" {
         didSet {
+            guard selectedDestinationLocation?.name != destinationLocationQuery else {
+                return
+            }
             isSearchingSourceLocations = false
-            if endLocation.isEmpty {
+            if destinationLocationQuery.isEmpty {
                 isSearchingDestinationLocations = false
             } else {
                 isSearchingDestinationLocations = true
-                fetchDestinationLocations(contains: endLocation)
+                fetchDestinationLocations(contains: destinationLocationQuery)
             }
         }
     }
@@ -37,12 +43,20 @@ class RouteViewViewModel: ObservableObject {
     
     @Published var selectedSourceLocation: Location? = nil {
         didSet {
+            isSearchingSourceLocations = false
             print("Selected location : \(selectedSourceLocation?.name ?? "Sample Source")")
+            if let location = selectedSourceLocation {
+                sourceLocationQuery = location.name
+            }
         }
     }
     @Published var selectedDestinationLocation: Location? = nil {
         didSet {
+            isSearchingDestinationLocations = false
             print("Selected location : \(selectedDestinationLocation?.name ?? "Sample Destination")")
+            if let location = selectedDestinationLocation {
+                destinationLocationQuery = location.name
+            }
         }
     }
     
@@ -50,12 +64,14 @@ class RouteViewViewModel: ObservableObject {
     @Published var errorMessage: String = ""
     
     let getLocationsUseCase: GetLocationsUseCase
+    let getCoordinatesUseCase: GetCoordinatesUseCase
     ///DispatchWorkItem API is used inorder to avoid unnecessary API calls on each character changes
     var checkSourceLoationWorkItem: DispatchWorkItem?
     var checkDestinationWorkItem: DispatchWorkItem?
     
-    init(getLocationsUseCase: GetLocationsUseCase) {
+    init(getLocationsUseCase: GetLocationsUseCase, getCoordinatesUseCase: GetCoordinatesUseCase) {
         self.getLocationsUseCase = getLocationsUseCase
+        self.getCoordinatesUseCase = getCoordinatesUseCase
     }
     
     private lazy var fetchSourceCallback: (Result<[Location], Error>) -> (Void) = { result in
@@ -114,5 +130,25 @@ class RouteViewViewModel: ObservableObject {
         }
         
         self.isError = false
+        
+        getCoordinatesUseCase.execute(sourceID: sourceLocation.id, destinationID: destinationLocation.id) { result in
+            switch result {
+            case .success(let locationCoordinates):
+                print(locationCoordinates)
+            case .failure(let error):
+                self.isError = true
+                self.errorMessage = error.localizedDescription
+            }
+        }
+    }
+    
+    func clearSourceLocation() {
+        self.sourceLocationQuery = ""
+        self.selectedSourceLocation = nil
+    }
+    
+    func clearDestinationLocation() {
+        self.destinationLocationQuery = ""
+        self.selectedDestinationLocation = nil
     }
 }

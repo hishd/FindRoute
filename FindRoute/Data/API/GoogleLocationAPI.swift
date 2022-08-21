@@ -35,6 +35,29 @@ class GoogleLocationAPI: LocationAPIService {
             }
         }
     }
+    
+    func findCoordinates(placeID: String) -> Future<CLLocationCoordinate2D, Error> {
+        return Future<CLLocationCoordinate2D, Error> { promise in
+            let placesClient = GMSPlacesClient.shared()
+            
+            placesClient.lookUpPlaceID(placeID) { place, error in
+                if let error = error {
+                    promise(.failure(error))
+                    return
+                }
+                
+                guard let place = place else {
+                    promise(.failure(LocationError.noCoordinates(placeID)))
+                    return
+                }
+                
+                let coordinates = CLLocationCoordinate2D(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+                
+                promise(.success(coordinates))
+            }
+        }
+    }
+    
     func getDirections(from start: CLLocationCoordinate2D, to end: CLLocationCoordinate2D) -> Future<Directions, Error> {
         return Future<Directions, Error> { [weak self] promise in
             
@@ -45,6 +68,7 @@ class GoogleLocationAPI: LocationAPIService {
 enum LocationError: Error {
     case notLocations
     case noDirections
+    case noCoordinates(String)
     case unknown
     case invalid
 }
@@ -56,6 +80,8 @@ extension LocationError: LocalizedError {
             return NSLocalizedString("No locations found", comment: "No Locations")
         case .noDirections:
             return NSLocalizedString("No Direction data found", comment: "No Data")
+        case .noCoordinates(let location):
+            return NSLocalizedString("No Coordinates found for location : \(location)", comment: "No Coordinates")
         case .unknown:
             return NSLocalizedString("Unknown error occurred", comment: "Unknown Error")
         case .invalid:

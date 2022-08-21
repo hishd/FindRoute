@@ -23,8 +23,14 @@ class DIContainer {
         container.register(GetLocationsUseCase.self) { resolver in
             GetLocationsUseCase(repository: resolver.resolve(LocationsRepository.self)!)
         }
+        container.register(GetCoordinatesUseCase.self) { resolver in
+            GetCoordinatesUseCase(repository: resolver.resolve(LocationsRepository.self)!)
+        }
         container.register(RouteViewViewModel.self) { resolver in
-            RouteViewViewModel(getLocationsUseCase: resolver.resolve(GetLocationsUseCase.self)!)
+            RouteViewViewModel(
+                getLocationsUseCase: resolver.resolve(GetLocationsUseCase.self)!,
+                getCoordinatesUseCase: resolver.resolve(GetCoordinatesUseCase.self)!
+            )
         }
         return container
     }()
