@@ -24,6 +24,7 @@
 		FDCCE5A528B1E36000502599 /* GoogleLocationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE5A428B1E36000502599 /* GoogleLocationAPI.swift */; };
 		FDCCE5A828B1E60900502599 /* LocationsRepositoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE5A728B1E60900502599 /* LocationsRepositoryComponent.swift */; };
 		FDCCE5AA28B1E61800502599 /* DirectionsRepositoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE5A928B1E61800502599 /* DirectionsRepositoryComponent.swift */; };
+		FDCCE5AC28B1E8CB00502599 /* apikeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDCCE5AB28B1E8CB00502599 /* apikeys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		FDCCE5A428B1E36000502599 /* GoogleLocationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLocationAPI.swift; sourceTree = "<group>"; };
 		FDCCE5A728B1E60900502599 /* LocationsRepositoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsRepositoryComponent.swift; sourceTree = "<group>"; };
 		FDCCE5A928B1E61800502599 /* DirectionsRepositoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsRepositoryComponent.swift; sourceTree = "<group>"; };
+		FDCCE5AB28B1E8CB00502599 /* apikeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = apikeys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 		FDCCE58E28B1DCE500502599 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FDCCE5AB28B1E8CB00502599 /* apikeys.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDCCE56C28B1DC3E00502599 /* Preview Assets.xcassets in Resources */,
+				FDCCE5AC28B1E8CB00502599 /* apikeys.plist in Resources */,
 				FDCCE56928B1DC3E00502599 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

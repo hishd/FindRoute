@@ -16,6 +16,6 @@ struct RouteView: View {
 
 struct RouteViewPreviews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        RouteView()
     }
 }
