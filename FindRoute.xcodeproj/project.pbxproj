@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FDCCE56528B1DC3B00502599 /* FindRouteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE56428B1DC3B00502599 /* FindRouteApp.swift */; };
-		FDCCE56728B1DC3B00502599 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE56628B1DC3B00502599 /* ContentView.swift */; };
+		FDCCE56728B1DC3B00502599 /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE56628B1DC3B00502599 /* RouteView.swift */; };
 		FDCCE56928B1DC3E00502599 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDCCE56828B1DC3E00502599 /* Assets.xcassets */; };
 		FDCCE56C28B1DC3E00502599 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDCCE56B28B1DC3E00502599 /* Preview Assets.xcassets */; };
 		FDCCE57628B1DC3E00502599 /* FindRouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE57528B1DC3E00502599 /* FindRouteTests.swift */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		FDCCE56128B1DC3B00502599 /* FindRoute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindRoute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDCCE56428B1DC3B00502599 /* FindRouteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindRouteApp.swift; sourceTree = "<group>"; };
-		FDCCE56628B1DC3B00502599 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FDCCE56628B1DC3B00502599 /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		FDCCE56828B1DC3E00502599 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDCCE56B28B1DC3E00502599 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FDCCE57128B1DC3E00502599 /* FindRouteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindRouteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				FDCCE56428B1DC3B00502599 /* FindRouteApp.swift */,
-				FDCCE56628B1DC3B00502599 /* ContentView.swift */,
+				FDCCE56628B1DC3B00502599 /* RouteView.swift */,
 				FDCCE56828B1DC3E00502599 /* Assets.xcassets */,
 				FDCCE56A28B1DC3E00502599 /* Preview Content */,
 			);
@@ -257,7 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDCCE56728B1DC3B00502599 /* ContentView.swift in Sources */,
+				FDCCE56728B1DC3B00502599 /* RouteView.swift in Sources */,
 				FDCCE56528B1DC3B00502599 /* FindRouteApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
