@@ -14,6 +14,16 @@
 		FDCCE57628B1DC3E00502599 /* FindRouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE57528B1DC3E00502599 /* FindRouteTests.swift */; };
 		FDCCE58028B1DC3E00502599 /* FindRouteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE57F28B1DC3E00502599 /* FindRouteUITests.swift */; };
 		FDCCE58228B1DC3E00502599 /* FindRouteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE58128B1DC3E00502599 /* FindRouteUITestsLaunchTests.swift */; };
+		FDCCE59428B1DD4700502599 /* RouteViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE59328B1DD4700502599 /* RouteViewViewModel.swift */; };
+		FDCCE59728B1DE0200502599 /* UseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE59628B1DE0200502599 /* UseCases.swift */; };
+		FDCCE59928B1DE6600502599 /* LocationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE59828B1DE6600502599 /* LocationsRepository.swift */; };
+		FDCCE59B28B1DE8600502599 /* DirectionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE59A28B1DE8600502599 /* DirectionsRepository.swift */; };
+		FDCCE59D28B1DEFF00502599 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE59C28B1DEFF00502599 /* Location.swift */; };
+		FDCCE59F28B1E05300502599 /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE59E28B1E05300502599 /* Directions.swift */; };
+		FDCCE5A328B1E2F600502599 /* LocationAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE5A228B1E2F600502599 /* LocationAPIService.swift */; };
+		FDCCE5A528B1E36000502599 /* GoogleLocationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE5A428B1E36000502599 /* GoogleLocationAPI.swift */; };
+		FDCCE5A828B1E60900502599 /* LocationsRepositoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE5A728B1E60900502599 /* LocationsRepositoryComponent.swift */; };
+		FDCCE5AA28B1E61800502599 /* DirectionsRepositoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE5A928B1E61800502599 /* DirectionsRepositoryComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +54,16 @@
 		FDCCE57B28B1DC3E00502599 /* FindRouteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindRouteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDCCE57F28B1DC3E00502599 /* FindRouteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindRouteUITests.swift; sourceTree = "<group>"; };
 		FDCCE58128B1DC3E00502599 /* FindRouteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindRouteUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FDCCE59328B1DD4700502599 /* RouteViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteViewViewModel.swift; sourceTree = "<group>"; };
+		FDCCE59628B1DE0200502599 /* UseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCases.swift; sourceTree = "<group>"; };
+		FDCCE59828B1DE6600502599 /* LocationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsRepository.swift; sourceTree = "<group>"; };
+		FDCCE59A28B1DE8600502599 /* DirectionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsRepository.swift; sourceTree = "<group>"; };
+		FDCCE59C28B1DEFF00502599 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		FDCCE59E28B1E05300502599 /* Directions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
+		FDCCE5A228B1E2F600502599 /* LocationAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAPIService.swift; sourceTree = "<group>"; };
+		FDCCE5A428B1E36000502599 /* GoogleLocationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLocationAPI.swift; sourceTree = "<group>"; };
+		FDCCE5A728B1E60900502599 /* LocationsRepositoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsRepositoryComponent.swift; sourceTree = "<group>"; };
+		FDCCE5A928B1E61800502599 /* DirectionsRepositoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsRepositoryComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +114,11 @@
 		FDCCE56328B1DC3B00502599 /* FindRoute */ = {
 			isa = PBXGroup;
 			children = (
+				FDCCE59128B1DD0300502599 /* Data */,
+				FDCCE59028B1DCF800502599 /* Domain */,
+				FDCCE58F28B1DCEE00502599 /* Presentation */,
+				FDCCE58E28B1DCE500502599 /* Resources */,
 				FDCCE56428B1DC3B00502599 /* FindRouteApp.swift */,
-				FDCCE56628B1DC3B00502599 /* RouteView.swift */,
 				FDCCE56828B1DC3E00502599 /* Assets.xcassets */,
 				FDCCE56A28B1DC3E00502599 /* Preview Content */,
 			);
@@ -125,6 +148,77 @@
 				FDCCE58128B1DC3E00502599 /* FindRouteUITestsLaunchTests.swift */,
 			);
 			path = FindRouteUITests;
+			sourceTree = "<group>";
+		};
+		FDCCE58E28B1DCE500502599 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FDCCE58F28B1DCEE00502599 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				FDCCE59228B1DD2C00502599 /* RouteView */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		FDCCE59028B1DCF800502599 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				FDCCE59628B1DE0200502599 /* UseCases.swift */,
+				FDCCE59828B1DE6600502599 /* LocationsRepository.swift */,
+				FDCCE59A28B1DE8600502599 /* DirectionsRepository.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		FDCCE59128B1DD0300502599 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FDCCE5A628B1E5ED00502599 /* Components */,
+				FDCCE5A128B1E29C00502599 /* API */,
+				FDCCE5A028B1E28700502599 /* Model */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FDCCE59228B1DD2C00502599 /* RouteView */ = {
+			isa = PBXGroup;
+			children = (
+				FDCCE56628B1DC3B00502599 /* RouteView.swift */,
+				FDCCE59328B1DD4700502599 /* RouteViewViewModel.swift */,
+			);
+			path = RouteView;
+			sourceTree = "<group>";
+		};
+		FDCCE5A028B1E28700502599 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FDCCE59E28B1E05300502599 /* Directions.swift */,
+				FDCCE59C28B1DEFF00502599 /* Location.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FDCCE5A128B1E29C00502599 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FDCCE5A228B1E2F600502599 /* LocationAPIService.swift */,
+				FDCCE5A428B1E36000502599 /* GoogleLocationAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		FDCCE5A628B1E5ED00502599 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FDCCE5A728B1E60900502599 /* LocationsRepositoryComponent.swift */,
+				FDCCE5A928B1E61800502599 /* DirectionsRepositoryComponent.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +351,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDCCE5A528B1E36000502599 /* GoogleLocationAPI.swift in Sources */,
+				FDCCE5AA28B1E61800502599 /* DirectionsRepositoryComponent.swift in Sources */,
+				FDCCE59428B1DD4700502599 /* RouteViewViewModel.swift in Sources */,
+				FDCCE59928B1DE6600502599 /* LocationsRepository.swift in Sources */,
+				FDCCE5A828B1E60900502599 /* LocationsRepositoryComponent.swift in Sources */,
+				FDCCE59B28B1DE8600502599 /* DirectionsRepository.swift in Sources */,
+				FDCCE59728B1DE0200502599 /* UseCases.swift in Sources */,
+				FDCCE5A328B1E2F600502599 /* LocationAPIService.swift in Sources */,
 				FDCCE56728B1DC3B00502599 /* RouteView.swift in Sources */,
 				FDCCE56528B1DC3B00502599 /* FindRouteApp.swift in Sources */,
+				FDCCE59D28B1DEFF00502599 /* Location.swift in Sources */,
+				FDCCE59F28B1E05300502599 /* Directions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
