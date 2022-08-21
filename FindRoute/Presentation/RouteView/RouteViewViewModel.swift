@@ -8,5 +8,6 @@
 import Foundation
 
 class RouteViewViewModel: ObservableObject {
-    
+    @Published var fromLocation: String = ""
+    @Published var endLocation: String = ""
 }

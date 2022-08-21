@@ -7,6 +7,7 @@ target 'FindRoute' do
 
   # Pods for FindRoute
   pod 'Swinject'
+  pod 'GoogleMaps'
 
   target 'FindRouteTests' do
     inherit! :search_paths

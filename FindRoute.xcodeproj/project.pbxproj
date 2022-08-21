@@ -10,6 +10,7 @@
 		0CA007A768BD3837001E9BD0 /* Pods_FindRoute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA800E6623D12CF22645509 /* Pods_FindRoute.framework */; };
 		5BB99350017D34975F9B3B66 /* Pods_FindRoute_FindRouteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82757C45B17339EA382BE1BD /* Pods_FindRoute_FindRouteUITests.framework */; };
 		E5EE1CAE6C82FD6281E4AA72 /* Pods_FindRouteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B4A00747ABC1AE9C3B3AC82 /* Pods_FindRouteTests.framework */; };
+		FD9CD64F28B1FAA3007A97D1 /* GoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CD64E28B1FAA3007A97D1 /* GoogleMapView.swift */; };
 		FDCCE56528B1DC3B00502599 /* FindRouteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE56428B1DC3B00502599 /* FindRouteApp.swift */; };
 		FDCCE56728B1DC3B00502599 /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE56628B1DC3B00502599 /* RouteView.swift */; };
 		FDCCE56928B1DC3E00502599 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDCCE56828B1DC3E00502599 /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		841EEEA4AF5A1F4F2A7BAD25 /* Pods-FindRoute.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindRoute.release.xcconfig"; path = "Target Support Files/Pods-FindRoute/Pods-FindRoute.release.xcconfig"; sourceTree = "<group>"; };
 		9B4A00747ABC1AE9C3B3AC82 /* Pods_FindRouteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindRouteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FFAFF556FA673FF98B24DD /* Pods-FindRouteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindRouteTests.release.xcconfig"; path = "Target Support Files/Pods-FindRouteTests/Pods-FindRouteTests.release.xcconfig"; sourceTree = "<group>"; };
+		FD9CD64E28B1FAA3007A97D1 /* GoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapView.swift; sourceTree = "<group>"; };
 		FDCCE56128B1DC3B00502599 /* FindRoute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindRoute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDCCE56428B1DC3B00502599 /* FindRouteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindRouteApp.swift; sourceTree = "<group>"; };
 		FDCCE56628B1DC3B00502599 /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
@@ -118,7 +120,6 @@
 				7EBF08B5A8C127F86EFB8108 /* Pods-FindRouteTests.debug.xcconfig */,
 				A3FFAFF556FA673FF98B24DD /* Pods-FindRouteTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -130,6 +131,14 @@
 				9B4A00747ABC1AE9C3B3AC82 /* Pods_FindRouteTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD9CD64D28B1FA8D007A97D1 /* Subview */ = {
+			isa = PBXGroup;
+			children = (
+				FD9CD64E28B1FAA3007A97D1 /* GoogleMapView.swift */,
+			);
+			path = Subview;
 			sourceTree = "<group>";
 		};
 		FDCCE55828B1DC3B00502599 = {
@@ -232,6 +241,7 @@
 		FDCCE59228B1DD2C00502599 /* RouteView */ = {
 			isa = PBXGroup;
 			children = (
+				FD9CD64D28B1FA8D007A97D1 /* Subview */,
 				FDCCE56628B1DC3B00502599 /* RouteView.swift */,
 				FDCCE59328B1DD4700502599 /* RouteViewViewModel.swift */,
 			);
@@ -277,6 +287,7 @@
 				FDCCE55E28B1DC3B00502599 /* Frameworks */,
 				FDCCE55F28B1DC3B00502599 /* Resources */,
 				120FF33EA6EC787DCF7538D4 /* [CP] Embed Pods Frameworks */,
+				9C74A8836C0BEFA95E824E00 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -315,6 +326,7 @@
 				FDCCE57828B1DC3E00502599 /* Frameworks */,
 				FDCCE57928B1DC3E00502599 /* Resources */,
 				76604985B9A49F784AC9A3EA /* [CP] Embed Pods Frameworks */,
+				7A66BE4EE45D3E0DCF4724E2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -475,6 +487,40 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FindRoute-FindRouteUITests/Pods-FindRoute-FindRouteUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7A66BE4EE45D3E0DCF4724E2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FindRoute-FindRouteUITests/Pods-FindRoute-FindRouteUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FindRoute-FindRouteUITests/Pods-FindRoute-FindRouteUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FindRoute-FindRouteUITests/Pods-FindRoute-FindRouteUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C74A8836C0BEFA95E824E00 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FindRoute/Pods-FindRoute-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FindRoute/Pods-FindRoute-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FindRoute/Pods-FindRoute-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		ED0006A235E72B6ED0FE01D2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -504,6 +550,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD9CD64F28B1FAA3007A97D1 /* GoogleMapView.swift in Sources */,
 				FDCCE5A528B1E36000502599 /* GoogleLocationAPI.swift in Sources */,
 				FDCCE5AA28B1E61800502599 /* DirectionsRepositoryComponent.swift in Sources */,
 				FDCCE59428B1DD4700502599 /* RouteViewViewModel.swift in Sources */,
