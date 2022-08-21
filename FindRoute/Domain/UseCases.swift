@@ -20,6 +20,18 @@ class GetLocationsUseCase {
     }
 }
 
+class GetCoordinatesUseCase {
+    private let repository: LocationsRepository
+    
+    init(repository: LocationsRepository) {
+        self.repository = repository
+    }
+    
+    func execute(sourceID: String, destinationID: String, callback: @escaping (Result<LocationCoordinates, Error>) -> Void) {
+        repository.findLocationCoordinates(sourceID: sourceID, destinationID: destinationID, callback: callback)
+    }
+}
+
 class GetDestinationsUseCase {
     private let repository: DirectionsRepository
     

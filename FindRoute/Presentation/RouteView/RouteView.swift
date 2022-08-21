@@ -15,23 +15,36 @@ struct RouteView: View {
     var body: some View {
         NavigationView {
             VStack {
-                TextField("Enter Source", text: $viewModel.fromLocation)
-                    .textFieldStyle(.roundedBorder)
+                HStack {
+                    TextField("Enter Source", text: $viewModel.sourceLocationQuery)
+                        .textFieldStyle(.roundedBorder)
                     .focused($focusField, equals: .isSource)
+                    
+                    Button("Clear") {
+                        viewModel.clearSourceLocation()
+                    }
+                }
                 if viewModel.isSearchingSourceLocations {
                     SearchResultsView(locations: viewModel.searchResults) { location in
                         withAnimation {
                             viewModel.selectedSourceLocation = location
+                            focusField = nil
                         }
                     }
                 }
-                TextField("Enter Destination", text: $viewModel.endLocation)
-                    .textFieldStyle(.roundedBorder)
+                HStack {
+                    TextField("Enter Destination", text: $viewModel.destinationLocationQuery)
+                        .textFieldStyle(.roundedBorder)
                     .focused($focusField, equals: .isDestination)
+                    Button("Clear") {
+                        viewModel.clearDestinationLocation()
+                    }
+                }
                 if viewModel.isSearchingDestinationLocations {
                     SearchResultsView(locations: viewModel.searchResults) { location in
                         withAnimation {
                             viewModel.selectedDestinationLocation = location
+                            focusField = nil
                         }
                     }
                 }
@@ -75,28 +88,5 @@ struct RouteViewPreviews: PreviewProvider {
             RouteView(viewModel: viewModel)
                 .previewDevice("iPhone 11")
         } 
-    }
-}
-
-struct SearchResultsView: View {
-    
-    let locations: [Location]
-    let onSelected: (Location) -> Void
-    
-    var body: some View {
-        ZStack {
-            if locations.isEmpty {
-                ProgressView("Locaing...!")
-            }
-            
-            List(locations, id: \.id) { location in
-                Text(location.name)
-                    .onTapGesture {
-                        onSelected(location)
-                    }
-            }
-            .listStyle(.plain)
-        }
-        .frame(maxWidth: .infinity, maxHeight: 200)
     }
 }

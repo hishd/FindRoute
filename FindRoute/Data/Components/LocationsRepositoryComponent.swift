@@ -32,4 +32,23 @@ class LocationsRepositoryComponent: LocationsRepository {
             }
             .store(in: &self.cancellables)
     }
+    
+    func findLocationCoordinates(sourceID: String, destinationID: String, callback: @escaping (Result<LocationCoordinates, Error>) -> Void) {
+        ///Using the Zip operator insted of DispatchGroup to enable dependent tasks
+        Publishers.Zip(service.findCoordinates(placeID: sourceID), service.findCoordinates(placeID: destinationID))
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    callback(.failure(error))
+                case .finished:
+                    print("Finished fetching Source and Destination Corrdinates")
+                }
+            } receiveValue: { sourceCoordinate, destinationCoordinate in
+                callback(.success(
+                    LocationCoordinates(sourceCoordinates: sourceCoordinate, destinationCoordinates: destinationCoordinate)
+                ))
+            }
+            .store(in: &self.cancellables)
+
+    }
 }
