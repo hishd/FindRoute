@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FDCCE56528B1DC3B00502599 /* FindRouteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE56428B1DC3B00502599 /* FindRouteApp.swift */; };
+		FDCCE56728B1DC3B00502599 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE56628B1DC3B00502599 /* ContentView.swift */; };
+		FDCCE56928B1DC3E00502599 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDCCE56828B1DC3E00502599 /* Assets.xcassets */; };
+		FDCCE56C28B1DC3E00502599 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDCCE56B28B1DC3E00502599 /* Preview Assets.xcassets */; };
+		FDCCE57628B1DC3E00502599 /* FindRouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE57528B1DC3E00502599 /* FindRouteTests.swift */; };
+		FDCCE58028B1DC3E00502599 /* FindRouteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE57F28B1DC3E00502599 /* FindRouteUITests.swift */; };
+		FDCCE58228B1DC3E00502599 /* FindRouteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCE58128B1DC3E00502599 /* FindRouteUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FDCCE57228B1DC3E00502599 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDCCE55928B1DC3B00502599 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FDCCE56028B1DC3B00502599;
+			remoteInfo = FindRoute;
+		};
+		FDCCE57C28B1DC3E00502599 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDCCE55928B1DC3B00502599 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FDCCE56028B1DC3B00502599;
+			remoteInfo = FindRoute;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FDCCE56128B1DC3B00502599 /* FindRoute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindRoute.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDCCE56428B1DC3B00502599 /* FindRouteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindRouteApp.swift; sourceTree = "<group>"; };
+		FDCCE56628B1DC3B00502599 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FDCCE56828B1DC3E00502599 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FDCCE56B28B1DC3E00502599 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FDCCE57128B1DC3E00502599 /* FindRouteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindRouteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDCCE57528B1DC3E00502599 /* FindRouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindRouteTests.swift; sourceTree = "<group>"; };
+		FDCCE57B28B1DC3E00502599 /* FindRouteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindRouteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDCCE57F28B1DC3E00502599 /* FindRouteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindRouteUITests.swift; sourceTree = "<group>"; };
+		FDCCE58128B1DC3E00502599 /* FindRouteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindRouteUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDCCE55E28B1DC3B00502599 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDCCE56E28B1DC3E00502599 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDCCE57828B1DC3E00502599 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FDCCE55828B1DC3B00502599 = {
+			isa = PBXGroup;
+			children = (
+				FDCCE56328B1DC3B00502599 /* FindRoute */,
+				FDCCE57428B1DC3E00502599 /* FindRouteTests */,
+				FDCCE57E28B1DC3E00502599 /* FindRouteUITests */,
+				FDCCE56228B1DC3B00502599 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FDCCE56228B1DC3B00502599 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDCCE56128B1DC3B00502599 /* FindRoute.app */,
+				FDCCE57128B1DC3E00502599 /* FindRouteTests.xctest */,
+				FDCCE57B28B1DC3E00502599 /* FindRouteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDCCE56328B1DC3B00502599 /* FindRoute */ = {
+			isa = PBXGroup;
+			children = (
+				FDCCE56428B1DC3B00502599 /* FindRouteApp.swift */,
+				FDCCE56628B1DC3B00502599 /* ContentView.swift */,
+				FDCCE56828B1DC3E00502599 /* Assets.xcassets */,
+				FDCCE56A28B1DC3E00502599 /* Preview Content */,
+			);
+			path = FindRoute;
+			sourceTree = "<group>";
+		};
+		FDCCE56A28B1DC3E00502599 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FDCCE56B28B1DC3E00502599 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FDCCE57428B1DC3E00502599 /* FindRouteTests */ = {
+			isa = PBXGroup;
+			children = (
+				FDCCE57528B1DC3E00502599 /* FindRouteTests.swift */,
+			);
+			path = FindRouteTests;
+			sourceTree = "<group>";
+		};
+		FDCCE57E28B1DC3E00502599 /* FindRouteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FDCCE57F28B1DC3E00502599 /* FindRouteUITests.swift */,
+				FDCCE58128B1DC3E00502599 /* FindRouteUITestsLaunchTests.swift */,
+			);
+			path = FindRouteUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FDCCE56028B1DC3B00502599 /* FindRoute */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDCCE58528B1DC3E00502599 /* Build configuration list for PBXNativeTarget "FindRoute" */;
+			buildPhases = (
+				FDCCE55D28B1DC3B00502599 /* Sources */,
+				FDCCE55E28B1DC3B00502599 /* Frameworks */,
+				FDCCE55F28B1DC3B00502599 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FindRoute;
+			productName = FindRoute;
+			productReference = FDCCE56128B1DC3B00502599 /* FindRoute.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FDCCE57028B1DC3E00502599 /* FindRouteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDCCE58828B1DC3E00502599 /* Build configuration list for PBXNativeTarget "FindRouteTests" */;
+			buildPhases = (
+				FDCCE56D28B1DC3E00502599 /* Sources */,
+				FDCCE56E28B1DC3E00502599 /* Frameworks */,
+				FDCCE56F28B1DC3E00502599 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDCCE57328B1DC3E00502599 /* PBXTargetDependency */,
+			);
+			name = FindRouteTests;
+			productName = FindRouteTests;
+			productReference = FDCCE57128B1DC3E00502599 /* FindRouteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FDCCE57A28B1DC3E00502599 /* FindRouteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDCCE58B28B1DC3E00502599 /* Build configuration list for PBXNativeTarget "FindRouteUITests" */;
+			buildPhases = (
+				FDCCE57728B1DC3E00502599 /* Sources */,
+				FDCCE57828B1DC3E00502599 /* Frameworks */,
+				FDCCE57928B1DC3E00502599 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDCCE57D28B1DC3E00502599 /* PBXTargetDependency */,
+			);
+			name = FindRouteUITests;
+			productName = FindRouteUITests;
+			productReference = FDCCE57B28B1DC3E00502599 /* FindRouteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDCCE55928B1DC3B00502599 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					FDCCE56028B1DC3B00502599 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					FDCCE57028B1DC3E00502599 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = FDCCE56028B1DC3B00502599;
+					};
+					FDCCE57A28B1DC3E00502599 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = FDCCE56028B1DC3B00502599;
+					};
+				};
+			};
+			buildConfigurationList = FDCCE55C28B1DC3B00502599 /* Build configuration list for PBXProject "FindRoute" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FDCCE55828B1DC3B00502599;
+			productRefGroup = FDCCE56228B1DC3B00502599 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FDCCE56028B1DC3B00502599 /* FindRoute */,
+				FDCCE57028B1DC3E00502599 /* FindRouteTests */,
+				FDCCE57A28B1DC3E00502599 /* FindRouteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDCCE55F28B1DC3B00502599 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDCCE56C28B1DC3E00502599 /* Preview Assets.xcassets in Resources */,
+				FDCCE56928B1DC3E00502599 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDCCE56F28B1DC3E00502599 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDCCE57928B1DC3E00502599 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FDCCE55D28B1DC3B00502599 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDCCE56728B1DC3B00502599 /* ContentView.swift in Sources */,
+				FDCCE56528B1DC3B00502599 /* FindRouteApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDCCE56D28B1DC3E00502599 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDCCE57628B1DC3E00502599 /* FindRouteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDCCE57728B1DC3E00502599 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDCCE58028B1DC3E00502599 /* FindRouteUITests.swift in Sources */,
+				FDCCE58228B1DC3E00502599 /* FindRouteUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FDCCE57328B1DC3E00502599 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FDCCE56028B1DC3B00502599 /* FindRoute */;
+			targetProxy = FDCCE57228B1DC3E00502599 /* PBXContainerItemProxy */;
+		};
+		FDCCE57D28B1DC3E00502599 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FDCCE56028B1DC3B00502599 /* FindRoute */;
+			targetProxy = FDCCE57C28B1DC3E00502599 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FDCCE58328B1DC3E00502599 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FDCCE58428B1DC3E00502599 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDCCE58628B1DC3E00502599 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FindRoute/Preview Content\"";
+				DEVELOPMENT_TEAM = 9CYSVYA95H;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hishd.FindRoute;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FDCCE58728B1DC3E00502599 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FindRoute/Preview Content\"";
+				DEVELOPMENT_TEAM = 9CYSVYA95H;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hishd.FindRoute;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FDCCE58928B1DC3E00502599 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9CYSVYA95H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hishd.FindRouteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindRoute.app/FindRoute";
+			};
+			name = Debug;
+		};
+		FDCCE58A28B1DC3E00502599 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9CYSVYA95H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hishd.FindRouteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindRoute.app/FindRoute";
+			};
+			name = Release;
+		};
+		FDCCE58C28B1DC3E00502599 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9CYSVYA95H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hishd.FindRouteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FindRoute;
+			};
+			name = Debug;
+		};
+		FDCCE58D28B1DC3E00502599 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9CYSVYA95H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hishd.FindRouteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FindRoute;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FDCCE55C28B1DC3B00502599 /* Build configuration list for PBXProject "FindRoute" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDCCE58328B1DC3E00502599 /* Debug */,
+				FDCCE58428B1DC3E00502599 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDCCE58528B1DC3E00502599 /* Build configuration list for PBXNativeTarget "FindRoute" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDCCE58628B1DC3E00502599 /* Debug */,
+				FDCCE58728B1DC3E00502599 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDCCE58828B1DC3E00502599 /* Build configuration list for PBXNativeTarget "FindRouteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDCCE58928B1DC3E00502599 /* Debug */,
+				FDCCE58A28B1DC3E00502599 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDCCE58B28B1DC3E00502599 /* Build configuration list for PBXNativeTarget "FindRouteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDCCE58C28B1DC3E00502599 /* Debug */,
+				FDCCE58D28B1DC3E00502599 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FDCCE55928B1DC3B00502599 /* Project object */;
+}
