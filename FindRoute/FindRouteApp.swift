@@ -7,6 +7,7 @@
 
 import SwiftUI
 import GoogleMaps
+import GooglePlaces
 
 @main
 struct FindRouteApp: App {
@@ -24,6 +25,7 @@ struct FindRouteApp: App {
                         return
                     }
                     GMSServices.provideAPIKey(mapsApiKey)
+                    GMSPlacesClient.provideAPIKey(mapsApiKey)
                 }
             } catch {
                 print("Could not find keys plist file")

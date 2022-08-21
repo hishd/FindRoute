@@ -35,6 +35,18 @@ struct RouteView: View {
                         }
                     }
                 }
+                
+                Button("Search Route") {
+                    viewModel.handleSearchRoute()
+                }
+                .buttonStyle(.bordered)
+                .padding()
+                
+                if viewModel.isError {
+                    Text(viewModel.errorMessage)
+                        .foregroundColor(.red)
+                        .font(Font.system(size: 18, weight: .semibold, design: .default))
+                }
 //                GoogleMapView()
 //                    .cornerRadius(10)
                 Spacer()
@@ -73,6 +85,10 @@ struct SearchResultsView: View {
     
     var body: some View {
         ZStack {
+            if locations.isEmpty {
+                ProgressView("Locaing...!")
+            }
+            
             List(locations, id: \.id) { location in
                 Text(location.name)
                     .onTapGesture {

@@ -8,6 +8,7 @@
 import Foundation
 import CoreLocation
 import Combine
+import GooglePlaces
 
 class GoogleLocationAPI: LocationAPIService {
     
@@ -17,8 +18,21 @@ class GoogleLocationAPI: LocationAPIService {
     private init() {}
     
     func findLocations(contains text: String) -> Future<[Location], Error> {
-        return Future<[Location], Error> { [weak self] promise in
-            
+        return Future<[Location], Error> { promise in
+            let filter = GMSAutocompleteFilter()
+            filter.country = "LK"
+            GMSPlacesClient.shared().findAutocompletePredictions(fromQuery: text, filter: filter, sessionToken: nil) { results, error in
+                guard let results = results, error == nil else {
+                    promise(.failure(LocationError.notLocations))
+                    return
+                }
+                
+                let locations: [Location] = results.compactMap { prediction in
+                    Location(id: prediction.placeID, name: prediction.attributedFullText.string)
+                }
+                
+                promise(.success(locations))
+            }
         }
     }
     func getDirections(from start: CLLocationCoordinate2D, to end: CLLocationCoordinate2D) -> Future<Directions, Error> {

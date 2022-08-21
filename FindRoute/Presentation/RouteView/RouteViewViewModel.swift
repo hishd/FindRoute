@@ -31,14 +31,7 @@ class RouteViewViewModel: ObservableObject {
         }
     }
     
-    @Published var searchResults: [Location] = [
-        Location(name: "Kadawatha", coordinates: nil),
-        Location(name: "Mahara", coordinates: nil),
-        Location(name: "Makola", coordinates: nil),
-        Location(name: "Maradana", coordinates: nil),
-        Location(name: "Gampaha", coordinates: nil),
-        Location(name: "Naiwala", coordinates: nil),
-    ]
+    @Published var searchResults: [Location] = []
     @Published var isSearchingSourceLocations = false
     @Published var isSearchingDestinationLocations = false
     
@@ -53,17 +46,73 @@ class RouteViewViewModel: ObservableObject {
         }
     }
     
+    @Published var isError: Bool = false
+    @Published var errorMessage: String = ""
+    
     let getLocationsUseCase: GetLocationsUseCase
+    ///DispatchWorkItem API is used inorder to avoid unnecessary API calls on each character changes
+    var checkSourceLoationWorkItem: DispatchWorkItem?
+    var checkDestinationWorkItem: DispatchWorkItem?
     
     init(getLocationsUseCase: GetLocationsUseCase) {
         self.getLocationsUseCase = getLocationsUseCase
     }
     
+    private lazy var fetchSourceCallback: (Result<[Location], Error>) -> (Void) = { result in
+        switch result {
+        case .success(let locations):
+            DispatchQueue.main.async {
+                self.searchResults = locations
+            }
+        case .failure(let error):
+            print(error.localizedDescription)
+        }
+    }
+    
+    private lazy var fetchDestinationCallback: (Result<[Location], Error>) -> (Void) = { result in
+        switch result {
+        case .success(let locations):
+            DispatchQueue.main.async {
+                self.searchResults = locations
+            }
+        case .failure(let error):
+            print(error.localizedDescription)
+        }
+    }
+    
     private func fetchSourceLocations(contains text: String) {
-        
+        DispatchQueue.main.async {
+            self.searchResults = []
+        }
+        checkSourceLoationWorkItem?.cancel()
+        let workItem: DispatchWorkItem = DispatchWorkItem {
+            print("Searching Source : \(text)")
+            self.getLocationsUseCase.execute(location: text, callback: self.fetchSourceCallback)
+        }
+        checkSourceLoationWorkItem = workItem
+        DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(1), execute: workItem)
     }
     
     private func fetchDestinationLocations(contains text: String) {
+        DispatchQueue.main.async {
+            self.searchResults = []
+        }
+        checkDestinationWorkItem?.cancel()
+        let workItem: DispatchWorkItem = DispatchWorkItem {
+            print("Searching Destination : \(text)")
+            self.getLocationsUseCase.execute(location: text, callback: self.fetchDestinationCallback)
+        }
+        checkDestinationWorkItem = workItem
+        DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(1), execute: workItem)
+    }
+    
+    func handleSearchRoute() {
+        guard let sourceLocation = selectedSourceLocation, let destinationLocation = selectedDestinationLocation else {
+            self.isError = true
+            self.errorMessage = "Please select both Start & End Location"
+            return
+        }
         
+        self.isError = false
     }
 }
