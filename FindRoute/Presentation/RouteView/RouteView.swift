@@ -56,9 +56,13 @@ struct RouteView: View {
 }
 
 struct RouteViewPreviews: PreviewProvider {
+    static let viewModel = DIContainer.shared.container.resolve(RouteViewViewModel.self)
+    
     static var previews: some View {
-        RouteView(viewModel: RouteViewViewModel())
-            .previewDevice("iPhone 11")
+        if let viewModel = viewModel {
+            RouteView(viewModel: viewModel)
+                .previewDevice("iPhone 11")
+        } 
     }
 }
 

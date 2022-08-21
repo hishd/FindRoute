@@ -15,6 +15,7 @@ class RouteViewViewModel: ObservableObject {
                 isSearchingSourceLocations = false
             } else {
                 isSearchingSourceLocations = true
+                fetchSourceLocations(contains: fromLocation)
             }
         }
     }
@@ -25,6 +26,7 @@ class RouteViewViewModel: ObservableObject {
                 isSearchingDestinationLocations = false
             } else {
                 isSearchingDestinationLocations = true
+                fetchDestinationLocations(contains: endLocation)
             }
         }
     }
@@ -49,5 +51,19 @@ class RouteViewViewModel: ObservableObject {
         didSet {
             print("Selected location : \(selectedDestinationLocation?.name ?? "Sample Destination")")
         }
+    }
+    
+    let getLocationsUseCase: GetLocationsUseCase
+    
+    init(getLocationsUseCase: GetLocationsUseCase) {
+        self.getLocationsUseCase = getLocationsUseCase
+    }
+    
+    private func fetchSourceLocations(contains text: String) {
+        
+    }
+    
+    private func fetchDestinationLocations(contains text: String) {
+        
     }
 }

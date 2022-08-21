@@ -31,9 +31,13 @@ struct FindRouteApp: App {
         }
     }
     
+    let viewModel = DIContainer.shared.container.resolve(RouteViewViewModel.self)
+    
     var body: some Scene {
         WindowGroup {
-            RouteView(viewModel: RouteViewViewModel())
+            if let viewModel = viewModel {
+                RouteView(viewModel: viewModel)
+            }
         }
     }
 }
