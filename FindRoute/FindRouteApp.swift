@@ -6,12 +6,40 @@
 //
 
 import SwiftUI
+import GoogleMaps
+import GooglePlaces
 
 @main
 struct FindRouteApp: App {
+    
+    init() {
+        if let keysPListPath = Bundle.main.url(forResource: "apikeys", withExtension: "plist") {
+            do {
+                let keysData = try Data(contentsOf: keysPListPath)
+                
+                if let dict = try PropertyListSerialization.propertyList(from: keysData, options: [], format: nil) as? [String: String] {
+                    print("Reading keys")
+                    print(dict)
+                    guard let mapsApiKey = dict["maps_key"] else {
+                        print("Could not find Google Maps API Key")
+                        return
+                    }
+                    GMSServices.provideAPIKey(mapsApiKey)
+                    GMSPlacesClient.provideAPIKey(mapsApiKey)
+                }
+            } catch {
+                print("Could not find keys plist file")
+            }
+        }
+    }
+    
+    let viewModel = DIContainer.shared.container.resolve(RouteViewViewModel.self)
+    
     var body: some Scene {
         WindowGroup {
-            RouteView()
+            if let viewModel = viewModel {
+                RouteView(viewModel: viewModel)
+            }
         }
     }
 }
