@@ -12,5 +12,5 @@ import Combine
 protocol LocationAPIService {
     func findLocations(contains text: String) -> Future<[Location], Error>
     func findCoordinates(placeID: String) -> Future<CLLocationCoordinate2D, Error>
-    func getDirections(from start: CLLocationCoordinate2D, to end: CLLocationCoordinate2D) -> Future<Directions, Error>
+    func getDirections(from start: CLLocationCoordinate2D, to end: CLLocationCoordinate2D, withKey apiKey: String) -> Future<Directions, Error>
 }

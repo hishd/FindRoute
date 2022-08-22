@@ -27,6 +27,6 @@ struct SearchResultsView: View {
             }
             .listStyle(.plain)
         }
-        .frame(maxWidth: .infinity, maxHeight: 200)
+        .frame(maxWidth: .infinity, minHeight: 150, maxHeight: 200)
     }
 }

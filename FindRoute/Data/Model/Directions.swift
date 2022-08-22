@@ -6,7 +6,18 @@
 //
 
 import Foundation
+import GoogleMaps
 
-struct Directions {
-    
+struct Directions: Codable {
+    let routes: [routeData?]?
+}
+
+struct routeData: Codable {
+    let overview_polyline: [String: String]
+}
+
+struct DirectionData {
+    let polyline: GMSPolyline
+    let sourceMarker: GMSMarker
+    let destinationMarker: GMSMarker
 }

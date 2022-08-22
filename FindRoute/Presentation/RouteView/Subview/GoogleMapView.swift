@@ -10,13 +10,27 @@ import SwiftUI
 import GoogleMaps
 
 struct GoogleMapView: UIViewRepresentable {
+    
+    let mapView = GMSMapView(frame: CGRect.zero, camera: GMSCameraPosition.centerPoint)
+    
     func makeUIView(context: Context) -> some UIView {
-        let mapView = GMSMapView(frame: CGRect.zero, camera: GMSCameraPosition.centerPoint)
         return mapView
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
         
+    }
+    
+    func refreshMapView(directionData: DirectionData?) {
+        if let data = directionData {
+            mapView.clear()
+            data.polyline.map = mapView
+            data.sourceMarker.map = mapView
+            data.destinationMarker.map = mapView
+            
+            let camera = GMSCameraPosition(target: data.sourceMarker.position, zoom: 14)
+            mapView.animate(to: camera)
+        }
     }
 }
 
