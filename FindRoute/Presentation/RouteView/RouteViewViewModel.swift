@@ -10,30 +10,12 @@ import Foundation
 class RouteViewViewModel: ObservableObject {
     @Published var sourceLocationQuery: String = "" {
         didSet {
-            guard selectedSourceLocation?.name != sourceLocationQuery else {
-                return
-            }
-            isSearchingDestinationLocations = false
-            if sourceLocationQuery.isEmpty {
-                isSearchingSourceLocations = false
-            } else {
-                isSearchingSourceLocations = true
-                fetchSourceLocations(contains: sourceLocationQuery)
-            }
+            onSourceLocationQueryChanged()
         }
     }
     @Published var destinationLocationQuery: String = "" {
         didSet {
-            guard selectedDestinationLocation?.name != destinationLocationQuery else {
-                return
-            }
-            isSearchingSourceLocations = false
-            if destinationLocationQuery.isEmpty {
-                isSearchingDestinationLocations = false
-            } else {
-                isSearchingDestinationLocations = true
-                fetchDestinationLocations(contains: destinationLocationQuery)
-            }
+            onDestinationLocationQueryChanged()
         }
     }
     
@@ -43,20 +25,12 @@ class RouteViewViewModel: ObservableObject {
     
     @Published var selectedSourceLocation: Location? = nil {
         didSet {
-            isSearchingSourceLocations = false
-            print("Selected location : \(selectedSourceLocation?.name ?? "Sample Source")")
-            if let location = selectedSourceLocation {
-                sourceLocationQuery = location.name
-            }
+            onselectedSourceLocation()
         }
     }
     @Published var selectedDestinationLocation: Location? = nil {
         didSet {
-            isSearchingDestinationLocations = false
-            print("Selected location : \(selectedDestinationLocation?.name ?? "Sample Destination")")
-            if let location = selectedDestinationLocation {
-                destinationLocationQuery = location.name
-            }
+            onSelectedDestinationLocation()
         }
     }
     
@@ -95,6 +69,51 @@ class RouteViewViewModel: ObservableObject {
             print(error.localizedDescription)
         }
     }
+}
+
+// MARK: Private Methods which handles ViewModel Operations
+extension RouteViewViewModel {
+    private func onSourceLocationQueryChanged() {
+        guard selectedSourceLocation?.name != sourceLocationQuery else {
+            return
+        }
+        isSearchingDestinationLocations = false
+        if sourceLocationQuery.isEmpty {
+            isSearchingSourceLocations = false
+        } else {
+            isSearchingSourceLocations = true
+            fetchSourceLocations(contains: sourceLocationQuery)
+        }
+    }
+    
+    private func onDestinationLocationQueryChanged() {
+        guard selectedDestinationLocation?.name != destinationLocationQuery else {
+            return
+        }
+        isSearchingSourceLocations = false
+        if destinationLocationQuery.isEmpty {
+            isSearchingDestinationLocations = false
+        } else {
+            isSearchingDestinationLocations = true
+            fetchDestinationLocations(contains: destinationLocationQuery)
+        }
+    }
+    
+    private func onselectedSourceLocation() {
+        isSearchingSourceLocations = false
+        print("Selected location : \(selectedSourceLocation?.name ?? "Sample Source")")
+        if let location = selectedSourceLocation {
+            sourceLocationQuery = location.name
+        }
+    }
+    
+    private func onSelectedDestinationLocation() {
+        isSearchingDestinationLocations = false
+        print("Selected location : \(selectedDestinationLocation?.name ?? "Sample Destination")")
+        if let location = selectedDestinationLocation {
+            destinationLocationQuery = location.name
+        }
+    }
     
     private func fetchSourceLocations(contains text: String) {
         DispatchQueue.main.async {
@@ -121,7 +140,10 @@ class RouteViewViewModel: ObservableObject {
         checkDestinationWorkItem = workItem
         DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(1), execute: workItem)
     }
-    
+}
+
+// MARK: Public Methods which handles View Layer Actions
+extension RouteViewViewModel {
     func handleSearchRoute() {
         guard let sourceLocation = selectedSourceLocation, let destinationLocation = selectedDestinationLocation else {
             self.isError = true
