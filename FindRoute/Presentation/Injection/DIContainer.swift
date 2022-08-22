@@ -20,16 +20,23 @@ class DIContainer {
         container.register(LocationsRepository.self) { resolver in
             LocationsRepositoryComponent(service: resolver.resolve(LocationAPIService.self)!)
         }
+        container.register(DirectionsRepository.self) { resolver in
+            DirectionsRepositoryComponent(service: resolver.resolve(LocationAPIService.self)!)
+        }
         container.register(GetLocationsUseCase.self) { resolver in
             GetLocationsUseCase(repository: resolver.resolve(LocationsRepository.self)!)
         }
         container.register(GetCoordinatesUseCase.self) { resolver in
             GetCoordinatesUseCase(repository: resolver.resolve(LocationsRepository.self)!)
         }
+        container.register(GetDirectionsUseCase.self) { resolver in
+            GetDirectionsUseCase(repository: resolver.resolve(DirectionsRepository.self)!)
+        }
         container.register(RouteViewViewModel.self) { resolver in
             RouteViewViewModel(
                 getLocationsUseCase: resolver.resolve(GetLocationsUseCase.self)!,
-                getCoordinatesUseCase: resolver.resolve(GetCoordinatesUseCase.self)!
+                getCoordinatesUseCase: resolver.resolve(GetCoordinatesUseCase.self)!,
+                getDirectionsUseCase: resolver.resolve(GetDirectionsUseCase.self)!
             )
         }
         return container
