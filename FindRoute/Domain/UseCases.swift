@@ -32,14 +32,14 @@ class GetCoordinatesUseCase {
     }
 }
 
-class GetDestinationsUseCase {
+class GetDirectionsUseCase {
     private let repository: DirectionsRepository
     
     init(repository: DirectionsRepository) {
         self.repository = repository
     }
     
-    func execute(fromCoordinate: CLLocationCoordinate2D, toCoordinate: CLLocationCoordinate2D, callback: @escaping (Result<Directions, Error>) -> Void) {
-        repository.findDirections(from: fromCoordinate, to: toCoordinate, callback: callback)
+    func execute(fromCoordinate: CLLocationCoordinate2D, toCoordinate: CLLocationCoordinate2D, withKey apiKey: String, callback: @escaping (Result<Directions, Error>) -> Void) {
+        repository.findDirections(from: fromCoordinate, to: toCoordinate, withKey: apiKey, callback: callback)
     }
 }

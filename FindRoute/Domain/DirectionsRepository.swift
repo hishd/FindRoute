@@ -9,5 +9,5 @@ import Foundation
 import CoreLocation
 
 protocol DirectionsRepository {
-    func findDirections(from start: CLLocationCoordinate2D, to end: CLLocationCoordinate2D, callback: @escaping (Result<Directions, Error>) -> Void)
+    func findDirections(from start: CLLocationCoordinate2D, to end: CLLocationCoordinate2D, withKey apiKey: String, callback: @escaping (Result<Directions, Error>) -> Void)
 }

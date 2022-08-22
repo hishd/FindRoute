@@ -26,6 +26,7 @@ struct FindRouteApp: App {
                     }
                     GMSServices.provideAPIKey(mapsApiKey)
                     GMSPlacesClient.provideAPIKey(mapsApiKey)
+                    ApiKeys.shared.mapsKey = mapsApiKey
                 }
             } catch {
                 print("Could not find keys plist file")

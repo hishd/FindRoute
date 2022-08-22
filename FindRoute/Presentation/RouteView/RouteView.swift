@@ -12,6 +12,8 @@ struct RouteView: View {
     @StateObject var viewModel: RouteViewViewModel
     @FocusState private var focusField: FocusedField?
     
+    var googleMapView = GoogleMapView()
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -50,7 +52,14 @@ struct RouteView: View {
                 }
                 
                 Button("Search Route") {
-                    viewModel.handleSearchRoute()
+                    self.viewModel.isRouteLoading = true
+                    viewModel.handleSearchRoute { directionData in
+                        DispatchQueue.main.async {
+                            self.viewModel.isRouteLoading = false
+                        }
+                        print("Refreshing Map View.....!")
+                        self.googleMapView.refreshMapView(directionData: directionData)
+                    }
                 }
                 .buttonStyle(.bordered)
                 .padding()
@@ -60,9 +69,17 @@ struct RouteView: View {
                         .foregroundColor(.red)
                         .font(Font.system(size: 18, weight: .semibold, design: .default))
                 }
-//                GoogleMapView()
-//                    .cornerRadius(10)
-                Spacer()
+                
+                if viewModel.isRouteLoading {
+                    ProgressView("Loading Route...!")
+                        .padding()
+                    Spacer()
+                } else {
+                    googleMapView
+                        .cornerRadius(10)
+                }
+                
+//                Spacer()
             }
             .padding()
             .toolbar {

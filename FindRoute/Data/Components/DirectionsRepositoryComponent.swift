@@ -18,8 +18,8 @@ class DirectionsRepositoryComponent: DirectionsRepository {
         self.service = service
     }
     
-    func findDirections(from start: CLLocationCoordinate2D, to end: CLLocationCoordinate2D, callback: @escaping (Result<Directions, Error>) -> Void) {
-        service.getDirections(from: start, to: end)
+    func findDirections(from start: CLLocationCoordinate2D, to end: CLLocationCoordinate2D, withKey apiKey: String, callback: @escaping (Result<Directions, Error>) -> Void) {
+        service.getDirections(from: start, to: end, withKey: apiKey)
             .sink { completion in
                 switch completion {
                 case .failure(let error):

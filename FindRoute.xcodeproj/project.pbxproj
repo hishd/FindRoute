@@ -10,6 +10,8 @@
 		0CA007A768BD3837001E9BD0 /* Pods_FindRoute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA800E6623D12CF22645509 /* Pods_FindRoute.framework */; };
 		5BB99350017D34975F9B3B66 /* Pods_FindRoute_FindRouteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82757C45B17339EA382BE1BD /* Pods_FindRoute_FindRouteUITests.framework */; };
 		E5EE1CAE6C82FD6281E4AA72 /* Pods_FindRouteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B4A00747ABC1AE9C3B3AC82 /* Pods_FindRouteTests.framework */; };
+		FD3DCB3128B3FF8B00A5DD88 /* HTTPWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DCB3028B3FF8B00A5DD88 /* HTTPWebService.swift */; };
+		FD3DCB3328B4089700A5DD88 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DCB3228B4089700A5DD88 /* APIKeys.swift */; };
 		FD4AC5DC28B2DC11000EFF7D /* SearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4AC5DB28B2DC11000EFF7D /* SearchResultsView.swift */; };
 		FD9CD64F28B1FAA3007A97D1 /* GoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CD64E28B1FAA3007A97D1 /* GoogleMapView.swift */; };
 		FD9CD65528B2091D007A97D1 /* FocusedField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CD65428B2091D007A97D1 /* FocusedField.swift */; };
@@ -61,6 +63,8 @@
 		841EEEA4AF5A1F4F2A7BAD25 /* Pods-FindRoute.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindRoute.release.xcconfig"; path = "Target Support Files/Pods-FindRoute/Pods-FindRoute.release.xcconfig"; sourceTree = "<group>"; };
 		9B4A00747ABC1AE9C3B3AC82 /* Pods_FindRouteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindRouteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FFAFF556FA673FF98B24DD /* Pods-FindRouteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindRouteTests.release.xcconfig"; path = "Target Support Files/Pods-FindRouteTests/Pods-FindRouteTests.release.xcconfig"; sourceTree = "<group>"; };
+		FD3DCB3028B3FF8B00A5DD88 /* HTTPWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPWebService.swift; sourceTree = "<group>"; };
+		FD3DCB3228B4089700A5DD88 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		FD4AC5DB28B2DC11000EFF7D /* SearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsView.swift; sourceTree = "<group>"; };
 		FD9CD64E28B1FAA3007A97D1 /* GoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapView.swift; sourceTree = "<group>"; };
 		FD9CD65428B2091D007A97D1 /* FocusedField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusedField.swift; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				FDCCE5AB28B1E8CB00502599 /* apikeys.plist */,
+				FD3DCB3228B4089700A5DD88 /* APIKeys.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 			children = (
 				FDCCE5A228B1E2F600502599 /* LocationAPIService.swift */,
 				FDCCE5A428B1E36000502599 /* GoogleLocationAPI.swift */,
+				FD3DCB3028B3FF8B00A5DD88 /* HTTPWebService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -585,7 +591,9 @@
 				FDCCE5A828B1E60900502599 /* LocationsRepositoryComponent.swift in Sources */,
 				FD9CD65928B21503007A97D1 /* DIContainer.swift in Sources */,
 				FDCCE59B28B1DE8600502599 /* DirectionsRepository.swift in Sources */,
+				FD3DCB3128B3FF8B00A5DD88 /* HTTPWebService.swift in Sources */,
 				FDCCE59728B1DE0200502599 /* UseCases.swift in Sources */,
+				FD3DCB3328B4089700A5DD88 /* APIKeys.swift in Sources */,
 				FDCCE5A328B1E2F600502599 /* LocationAPIService.swift in Sources */,
 				FDCCE56728B1DC3B00502599 /* RouteView.swift in Sources */,
 				FDCCE56528B1DC3B00502599 /* FindRouteApp.swift in Sources */,
